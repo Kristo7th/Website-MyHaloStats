@@ -1,0 +1,20 @@
+footer
+{
+    text-transform: uppercase;
+}
+
+footer a
+{
+    text-decoration: none;
+    color:white;
+}
+
+footer a:hover
+{
+    color: rgb(180, 180, 180);
+}
+
+footer p
+{
+    font-size: 0.7rem;
+}

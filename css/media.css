@@ -1,0 +1,42 @@
+@media(max-width:769px)
+{
+    #player-searched
+    {
+        margin-top: -100px;
+    }
+    #player-searched h1
+    {
+        margin-left: -25px;
+        margin-bottom: 25px;
+    }
+    .stat-value
+    {
+        margin-bottom: 25px;
+        border-bottom: 1px solid rgb(122, 122, 122);
+    }
+
+    #playerHistory
+    {
+        font-size: 0.5em;
+    }
+    #history-map-title0
+    {
+        display: none;
+    }
+    #history-map-title1
+    {
+        display: none;
+    }
+    #history-map-title2
+    {
+        display: none;
+    }
+    #rank-image
+    {
+        margin-left: -15px;
+    }
+    #rank-playlist-image
+    {
+        margin-right: 25px;   
+    }
+}

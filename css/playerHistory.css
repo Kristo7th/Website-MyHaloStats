@@ -1,0 +1,29 @@
+#playerHistory h1 {
+    text-transform: uppercase;
+    font-size: 2em;
+}
+
+.history
+{
+    position: relative;
+}
+
+.history-image
+{
+    background: black;
+    overflow: hidden;
+}
+
+.history-image img {
+    position:absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+}
+
+.history-stats
+{
+    position: relative;
+    opacity: 1;
+}

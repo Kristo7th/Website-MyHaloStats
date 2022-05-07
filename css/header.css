@@ -1,0 +1,53 @@
+#search-player-form .form-container {
+    width: 20%;
+}
+
+#search-header .header-container
+{
+    margin-top: 100px;
+}
+
+
+#search-header .video-header
+{
+   position: absolute;
+   object-fit: cover;
+   left: 0;
+   top: 0;
+   z-index: -1;
+   width: 100%;
+   height: 45%;
+}
+
+#search-header li
+{
+    margin: 0 5px 0 2px;
+}
+
+#search-header h1
+{
+    font-size: 2.5em;
+    text-transform: uppercase;
+}
+
+@media(max-width:769px) {
+    #search-player-form .form-container {
+        width: 75%;
+    }
+    video
+    {
+        display: none;
+    }
+    #search-header .header-container
+    {
+        margin-top: 0;
+    }
+}
+
+@media(min-height:1200px)
+{
+    #search-header .video-header
+    {
+       height: 35%;
+    }
+}

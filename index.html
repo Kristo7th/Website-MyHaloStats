@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyHaloCareer</title>
+
+    <!--Bootstrap CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!--Local CSS-->
+    <link rel="stylesheet" href="css/body.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/player.css">
+    <link rel="stylesheet" href="css/halomcc.css">
+    <link rel="stylesheet" href="css/playerHistory.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/media.css">
+
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/393da8f358.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <header id="search-header" class="py-5">
+        <!-- <div class="container-fluid">
+            <h6 class="text-white">MCC Steam Population <span>1337</span></h6>
+            <h6 class="text-white">Halo Infinite Steam Population<span>1337</span></h6>
+        </div> -->
+        <div class="container-fluid text-center header-container">
+            <h1 class="text-white">Search Your Halo Stats</h1>
+            <form id="search-player-form">
+                <div class="py-3 d-flex flex-column form-container m-auto">
+                    <input type="text" name="nameSearch" class="form-label" placeholder="Enter Gamertag">
+                    <button id="search-player-button" class="btn btn-danger">Search for Player</button>
+                </div>
+            </form>
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="text-white fab fa-twitter fa-2x"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="text-white fab fa-discord fa-2x"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="text-white fab fa-github fa-2x"></i></a>
+                </li>
+            </ul>
+        </div>
+        <video class="video-header" autoplay loop muted>
+            <source src="img/clip.mp4" type="video/mp4">
+        </video>
+    </header>
+
+    <section id="player-searched" class="d-none">
+        <section id="halomcc" class="py-5">
+            <div class="container-fluid d-flex flex-row justify-content-center py-5">
+                <div class="row w-75">
+                    <div class="col-sm-4">
+                        <div class="image-spartan d-none d-sm-block">
+                            <img id="avatar" src="img/spartan_template.png" alt="profile picture"
+                                class="img-fluid border-secondary">
+                        </div>
+                    </div>
+                    <div class="col-sm d-flex flex-column justify-content-center">
+                        <div class="row mb-5">
+                            <div class="col-sm stats-spartan text-white border-secondary text-center">
+                                <div class="stat-title">
+                                    <h1>Kills</h1>
+                                    <div class="divider container-fluid border-danger"></div>
+                                </div>
+                                <div class="stat-value">
+                                    <h1 id="player-kills">1337</h1>
+                                </div>
+                            </div>
+                            <div class="col-sm stats-spartan text-white border-secondary text-center">
+                                <div class="stat-title">
+                                    <h1>Deaths</h1>
+                                    <div class="divider container-fluid border-danger"></div>
+                                </div>
+                                <div class="stat-value">
+                                    <h1 id="player-deaths">1337</h1>
+                                </div>
+                            </div>
+                            <div class="col-sm col- stats-spartan text-white border-secondary text-center">
+                                <div class="stat-title">
+                                    <h1>Assists</h1>
+                                    <div class="divider container-fluid border-danger"></div>
+                                </div>
+                                <div class="stat-value">
+                                    <h1 id="player-assists">1337</h1>
+                                </div>
+                            </div>
+                            <div class="col-sm col- stats-spartan text-white border-secondary text-center">
+                                <div class="stat-title">
+                                    <h1>K/D</h1>
+                                    <div class="divider container-fluid border-danger"></div>
+                                </div>
+                                <div class="stat-value" style="border: none;">
+                                    <h1 id="player-kda">1337</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="divider border border-danger"></div>
+                        <div class="row mb-5 mt-5">
+                            <div class="col-sm stats-spartan text-white border-secondary text-center">
+                                <div class="stat-title">
+                                    <h1>Games</h1>
+                                    <div class="divider container-fluid border-danger"></div>
+                                </div>
+                                <div class="stat-value">
+                                    <h1 id="player-total-games">1337</h1>
+                                </div>
+                            </div>
+                            <div class="col-sm stats-spartan text-white border-secondary text-center">
+                                <div class="stat-title">
+                                    <h1>Wins</h1>
+                                    <div class="divider container-fluid border-danger"></div>
+                                </div>
+                                <div class="stat-value">
+                                    <h1 id="player-total-wins">1337</h1>
+                                </div>
+                            </div>
+                            <div class="col-sm stats-spartan text-white border-secondary text-center">
+                                <div class="stat-title">
+                                    <h1>Losses</h1>
+                                    <div class="divider container-fluid border-danger"></div>
+                                </div>
+                                <div class="stat-value">
+                                    <h1 id="player-total-loss">1337</h1>
+                                </div>
+                            </div>
+                            <div class="col-sm stats-spartan text-white border-secondary text-center">
+                                <div class="stat-title">
+                                    <h1>Win Rate</h1>
+                                    <div class="divider container-fluid border-danger"></div>
+                                </div>
+                                <div class="stat-value" style="border: none;">
+                                    <h1 id="player-win-rate">1337</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="divider border border-danger"></div>
+                        <div class="row mb-3 mt-3">
+                            <div class="col-sm stats-spartan text-white border-secondary text-center">
+                                <div class="stat-title">
+                                    <h1>Total Hours</h1>
+                                    <div class="divider container-fluid border-danger"></div>
+                                </div>
+                                <div class="stat-value">
+                                    <h1 id="player-total-time">1337</h1>
+                                </div>
+                            </div>
+                            <div class="col-sm stats-spartan text-white border-secondary text-center">
+                                <div class="stat-title">
+                                    <h1>Gamertag</h1>
+                                    <div class="divider container-fluid border-danger"></div>
+                                </div>
+                                <div class="stat-value">
+                                    <h1 id="player-name">Yaksha 7th</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div id="player-ranking" class="container-fluid mt-5 mb-4 d-flex justify-content-around">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="stats-spartan text-white border-secondary text-center mb-5">
+                            <div class="stat-title">
+                                <h1>Rank</h1>
+                                <img src="" alt="" id="rank-image" class="mt-4 mb-4">
+                                <div class="divider container-fluid border-danger"></div>
+                            </div>
+                            <div class="stat-value">
+                                <h1 id="rank-value">Rookie</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="stats-spartan text-white border-secondary text-center">
+                            <div class="stat-title">
+                                <h1>Highest Playlist Rank</h1>
+                                <img src="" alt="" id="rank-playlist-image" class="mt-4 mb-4">
+                                <div class="divider container-fluid border-danger">
+                                    <h1 id="rank-playlist-value" class=""></h1>
+                                </div>
+                            </div>
+                            <div class="stat-value">
+                                <img src="" alt="" id="playlist-rank-highest">
+                            </div>
+                        </div>
+                    </div>
+                        <div class="stats-spartan text-white border-secondary text-center mt-5 text-center">
+                            <div class="stat-title">
+                                <h1>Progress to next rank</h1>
+                            </div>
+                            <div class="stat-value" style="border: none;">
+                                <div class="progress">
+                                    <div id="rank-progression" class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" style='width: 20%;' aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider container-fluid border border-danger"></div>
+
+        <section id="playerHistory" class="history">
+            <div class="history-image">
+                <img src="" alt="halo map" id="halo-history-map0">
+            </div>
+            <div class="history-stats text-white">
+                <h1 id="history-map-title0" class="mt-3 mb-5 text-center">Guardian</h1>
+                <h4 id="history-map-gametype0" class="mt-2 text-center">Slayer</h4>
+                <div class="container mt-5 d-flex flex-row justify-content-around">
+                    <div class=" border-secondary ' text-center">
+                        <h1>Kills</h1>
+                        <h1 id="history-kills0">1337</h1>
+                    </div>
+                    <div class=" border-secondary text-center">
+                        <h1>Deaths</h1>
+                        <h1 id="history-deaths0">1337</h1>
+                    </div>
+                    <div class=" border-secondary text-center">
+                        <h1>Assists</h1>
+                        <h1 id="history-assists0">1337</h1>
+                    </div>
+                    <div class=" border-secondary text-center">
+                        <h1>K/D</h1>
+                        <h1 id="history-kd0">1337</h1>
+                    </div>
+                    <div class="border-secondary text-center">
+                        <h1>Score</h1>
+                        <h1 id="history-score0">1337</h1>
+                    </div>
+                </div>
+                <div class="container mt-5 d-flex flex-row justify-content-around">
+                    <div class=" border-secondary ' text-center">
+                        <h1>Outcome</h1>
+                        <h1 id="history-game-state0">Won</h1>
+                    </div>
+                    <div class=" border-secondary text-center">
+                        <h1>Duration</h1>
+                        <h1 id="history-duration0">00h 10m 41s</h1>
+                    </div>
+                    <div class=" border-secondary text-center">
+                        <h1>Played On</h1>
+                        <h1 id="history-day0">2022 04 15</h1>
+                        <!--Convert to better reading JS-->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider container-fluid border border-danger"></div>
+
+        <section id="playerHistory" class="history">
+            <div class="history-image">
+                <img src="" alt="halo map" id="halo-history-map1">
+            </div>
+            <div class="history-stats text-white">
+                <h1 id="history-map-title1" class="mt-3 mb-5 text-center">Guardian</h1>
+                <h4 id="history-map-gametype1" class="mt-2 text-center">Slayer</h4>
+                <div class="container mt-5 d-flex flex-row justify-content-around">
+                    <div class=" border-secondary ' text-center">
+                        <h1>Kills</h1>
+                        <h1 id="history-kills1">1337</h1>
+                    </div>
+                    <div class=" border-secondary ' text-center">
+                        <h1>Deaths</h1>
+                        <h1 id="history-deaths1">1337</h1>
+                    </div>
+                    <div class=" border-secondary ' text-center">
+                        <h1>Assists</h1>
+                        <h1 id="history-assists1">1337</h1>
+                    </div>
+                    <div class=" border-secondary ' text-center">
+                        <h1>K/D</h1>
+                        <h1 id="history-kd1">1337</h1>
+                    </div>
+                    <div class="border-secondary ' text-center">
+                        <h1>Score</h1>
+                        <h1 id="history-score1">1337</h1>
+                    </div>
+                </div>
+                <div class="container mt-5 d-flex flex-row justify-content-around">
+                    <div class=" border-secondary ' text-center">
+                        <h1>Outcome</h1>
+                        <h1 id="history-game-state1">Won</h1>
+                    </div>
+                    <div class=" border-secondary ' text-center">
+                        <h1>Duration</h1>
+                        <h1 id="history-duration1">00h 10m 41s</h1>
+                    </div>
+                    <div class=" border-secondary ' text-center">
+                        <h1>Played On</h1>
+                        <h1 id="history-day1">2022 04 15</h1>
+                        <!--Convert to better reading JS-->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider container-fluid border border-danger"></div>
+
+
+        <section id="playerHistory" class="history">
+            <div class="history-image">
+                <img src="" alt="halo map" id="halo-history-map2">
+            </div>
+            <div class="history-stats text-white">
+                <h1 id="history-map-title2" class="mt-3 mb-5 text-center">Guardian</h1>
+                <h4 id="history-map-gametype2" class="mt-2 text-center">Slayer</h4>
+                <div class="container mt-5 d-flex flex-row justify-content-around">
+                    <div class=" border-secondary text-center">
+                        <h1>Kills</h1>
+                        <h1 id="history-kills2">1337</h1>
+                    </div>
+                    <div class=" border-secondarytext-center">
+                        <h1>Deaths</h1>
+                        <h1 id="history-deaths2">1337</h1>
+                    </div>
+                    <div class=" border-secondary text-center">
+                        <h1>Assists</h1>
+                        <h1 id="history-assists2">1337</h1>
+                    </div>
+                    <div class=" border-secondarytext-center">
+                        <h1>K/D</h1>
+                        <h1 id="history-kd2">1337</h1>
+                    </div>
+                    <div class="border-secondary text-center">
+                        <h1>Score</h1>
+                        <h1 id="history-score2">1337</h1>
+                    </div>
+                </div>
+                <div class="container mt-5 d-flex flex-row justify-content-around">
+                    <div class=" border-secondary text-center">
+                        <h1>Outcome</h1>
+                        <h1 id="history-game-state2">Won</h1>
+                    </div>
+                    <div class="border-secondary text-center">
+                        <h1>Duration</h1>
+                        <h1 id="history-duration2">00h 10m 41s</h1>
+                    </div>
+                    <div class=" border-secondary text-center">
+                        <h1>Played On</h1>
+                        <h1 id="history-day2">2022 04 15</h1>
+                        <!--Convert to better reading JS-->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="divider container-fluid border border-danger"></div>
+    </section>
+
+    <footer class="container-fluid bg-dark d-sm-block">
+        <div class="container text-white">
+            <div class="row">
+                <div class="col-sm-3">
+                    <ul class="container py-3 mt-3">
+                        <li class="py-2 w-50">
+                            <a id="api-link" target="_blank" href="#">
+                                <h6>Halo API</h6>
+                            </a>
+                        </li>
+                        <li class="py-2 w-50">
+                            <a id="waypoint-link" target="_blank" href="#">
+                                <h6>Halo Waypoint</h6>
+                            </a>
+                        </li>
+                        <li class="py-2 w-25">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#contact-modal">
+                                <h6>Contact</h6>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <ul class="container py-3 mt-3">
+                        <li class="py-2 w-50">
+                            <a id="twitter-link" target="_blank" href="#">
+                                <h6>Privacy Policy</h6>
+                            </a>
+                        </li>
+                        <li class="py-2 w-75">
+                            <a id="twitter-link" target="_blank" href="#">
+                                <h6>Terms of Services</h6>
+                            </a>
+                        </li>
+                        <li class="py-2 w-25">
+                            <a id="discord-link" target="_blank" href="#">
+                                <h6>Discord</h6>
+                            </a>
+                        </li>
+                        <li class="py-2 w-25">
+                            <a id="github-link" target="_blank">
+                                <h6>Github</h6>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 m-auto">
+                    <h5>Copyright &copy; <span style="color: #db222a;">MyHaloCareer </span><span
+                            id="currentYear"></span></h5>
+                    <p>Halo Infinite and Halo: The Master Chief Collection are registered trademarks of Microsoft
+                        Studios. Trademarks are the property of
+                        their respective owners. Game materials copyright Microsoft Studios. Microsoft Studios has not
+                        endorsed and is not responsible for this site or its content.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!--Modals-->
+    <div class="modal fade" id="contact-modal" tabindex="-1" aria-labelledby="contact-modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content text-white bg-dark">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="contact-modal">Contact US!</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <a href="#" class="link-danger">Twitter</a>
+                    <a href="#" class="link-danger">Discord</a>
+                    <a href="#" class="link-danger">Email</a>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--Bootstrap CDN-->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+
+    <!--Testing Scripts-->
+
+
+    <!--Local Scripts-->
+    <script src="javascript/additional.js"></script>
+    <script src="javascript/maps.js"></script>
+    <script src="javascript/HaloAPI.js"></script>
+    <script src="javascript/mcc.js"></script>
+
+
+</body>
+
+</html>

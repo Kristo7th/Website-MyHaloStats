@@ -1,0 +1,12 @@
+.stats-spartan h1 {
+    text-transform: uppercase;
+    font-size: 1.5em;
+}
+
+#player-searched {
+    position: relative;
+}
+
+#rank-playlist-value {
+    margin-top: 20px;
+}
